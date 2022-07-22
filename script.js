@@ -1,18 +1,16 @@
-const Hours = document.getElementById('hours');
-const seconds = document.getElementById('seconds');
-const minutes = document.getElementById('minutes');
+var hours = document.getElementById('hours');
+var minutes = document.getElementById('minutes');
+var seconds = document.getElementById('seconds');
 
-const display = document.querySelectorAll('.display');
-
-const body = document.querySelector('body');
- 
-const relogio = setInterval(function time(){
-const dateToday = new Date();
-        const hr = dateToday.getHours();
-        const min = dateToday.getMinutes();
-        const ss = dateToday.getSeconds();
-
-    Hours.textContent = hr;
+var relogio = setInterval(function time(){
+    var dateToday = new Date();
+    var hr = dateToday.getHours();
+    hr = ("0" + hr).slice(-2);
+    var min = dateToday.getMinutes();
+    min = ("0" + min).slice(-2);
+    var ss = dateToday.getSeconds();
+    ss = ("0" + ss).slice(-2);
+    hours.textContent = hr;
     minutes.textContent = min;
     seconds.textContent = ss;
 })
